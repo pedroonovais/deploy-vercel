@@ -1,19 +1,14 @@
-import { Header } from "@/components/header/Header";
-import Image from "next/image";
+import { Loader } from "@googlemaps/js-api-loader";
 
 export default function Home() {
+    const loader = new Loader({
+        apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY,
+        version: "weekly"
+    })
+    
     return (
-        <>
         <main>
-            <Header />
-        </main> 
-        <section className="container mx-auto">
-            <div className="flex">
-                <article className="w-1/3">bla</article>
-                <article className="w-1/3">bla</article>
-                <article className="w-1/3">bla</article>
-            </div>
-        </section>
-        </>
+            <h1>Env vars</h1>
+        </main>
     );
 }
